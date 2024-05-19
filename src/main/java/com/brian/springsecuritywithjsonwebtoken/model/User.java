@@ -1,10 +1,11 @@
 package com.brian.springsecuritywithjsonwebtoken.model;
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Collection;
 
 @Entity
@@ -19,5 +20,5 @@ public class User {
     private String username;
     private String password;
     @ManyToMany(fetch = FetchType.EAGER)
-    private Collection<Role> roles;
+    private Collection<Role> roles = new ArrayList<>();
 }
